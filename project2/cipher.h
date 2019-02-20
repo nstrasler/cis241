@@ -5,10 +5,12 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-char encrypt(char ch, int key);
-void processFile(FILE *fin, FILE *fout, int key);
+char encrypt(char ch, char* key_arr);
+char decrypt(char ch, char* key_arr, char* alpha);
+void processFile(FILE* fin, FILE* fout, char* key_arr, char* alpha, int choice);
 void removeDup(char* input);
-void initEncryptArr();
-void initDecryptArr();
+char* initEncryptArr(char* key_arr, char* alpha);
+int	targetFound(char*	charArr,	int	num,	char	target);
+char* genAlpha(int reversed);
 
 #endif //CIPHER_H
